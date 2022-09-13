@@ -6,7 +6,9 @@ function linkedList() {
     append(value) {   // adds a new node to end of list
     },
     prepend(value) {  // adds a new node to start of list
-      aList.head.next = node(value,null);
+      newNode = node(value,null);
+      newNode.next = aList.head;    // Adding the rest of aList to the newNode's next
+      aList.head = newNode;         // Appending newNode to the start of the list
     },
     size() {          // returns the total number of nodes in the list
     },
@@ -41,6 +43,7 @@ const aList = {   // Initialis empty list
 aList.head = node(null,null); // Initialise with null node
 
 
+//        Example output object for a linked ist:
 // const aList = {
 //   head: {
 //       value: 6,

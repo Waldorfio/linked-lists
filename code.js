@@ -4,6 +4,10 @@ console.log('----');
 function linkedList() {
   return {
     append(value) {   // adds a new node to end of list
+      // while (a condition) {
+      //   a = aList.head.next;
+      //   a.next;
+      // }
     },
     prepend(value) {  // adds a new node to start of list
       newNode = node(value,null);
@@ -11,6 +15,21 @@ function linkedList() {
       aList.head = newNode;         // Appending newNode to the start of the list
     },
     size() {          // returns the total number of nodes in the list
+      // Initialise
+      endOfList = false;
+      let a = aList.head;
+      i = 0;
+
+      while (endOfList == false) {    // Loop
+        if (a == null) {
+          endOfList = true;
+        } else {
+          a = a.next;
+          i += 1;
+        };
+      }
+      console.log('total # of nodes: '+i)
+      return i
     },
     head() {          // returns the first node in the list
       return aList.head.value;
@@ -38,24 +57,26 @@ function node(value,next) {   // Factory function to create new nodes
 }
 
 const aList = {   // Initialis empty list
-  head: {}        // Create empty object to hold nodes
+  head: {}        // Add empty head object
 }
-aList.head = node(null,null); // Initialise with null node
+aList.head = node(null,null); // Add tail object to the end
+
+
 
 
 //        Example output object for a linked ist:
-// const aList = {
-//   head: {
-//       value: 6,
-//       next: {
-//           value: 10,
-//           next: {
-//               value: 12,
-//               next: {
-//                   value: 3,
-//                   next: null,
-//               }
-//           }
-//       }
-//   }
-// }
+const aList2 = {
+  head: {
+      value: 6,
+      next: {
+          value: 10,
+          next: {
+              value: 12,
+              next: {
+                  value: 3,
+                  next: null,
+              }
+          }
+      }
+  }
+}
